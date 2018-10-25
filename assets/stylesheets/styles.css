@@ -74,12 +74,12 @@ html, body {
   padding: 5px 30px;
   }
 
-.sidenav {
+sidenav {
     transform: rotate (90deg);
     transform-origin: left top 100;
   }
 
-.sidenav {
+sidenav {
     width:  25%;
     height:  100px;
     color: #fff;
