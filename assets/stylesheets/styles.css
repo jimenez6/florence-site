@@ -1,4 +1,7 @@
 
+
+/*GENERAL*/
+
   * {
 	  box-sizing: border-box;
 	}
@@ -9,21 +12,26 @@ html, body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  font-family: 'ArchitectsDaughter', cursive;
+  /*font-family: 'Fahkwang', sans-serif;*/
+  font-family: 'Montserrat Alternates', sans-serif;
+  /*font-family: 'ArchitectsDaughter', cursive;*/
   margin: 0;
   padding: 0;
-}
+ }
 
-.h1 {text-align:center;}
-
-.wrapper {
-  margin-top: 60px;
-}
+ .home {
+   background: url('../images/home.png') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+ }
 
 .container {
 	  position: relative;
 	  margin: auto;
 	  padding: 0 20px;
+    overflow: hidden;
 	}
 
 .header {
@@ -39,25 +47,6 @@ html, body {
 }
 
 
-.section-title{text-align:center;}
-
-
-
-	.logo {
-	  max-height: 200px;
-	  float: left;
-	  padding: 20px 0;
-	}
-
-	.logo > a {
-	  display: inline-block;
-	  height: 200%;
-	  line-height: 100px;
-	  color: #fff;
-	  /*font-size: 24px;*/
-	}
-
-
  /*MAIN NAVIGATION*/
 .navmenu {
   width: 100%;
@@ -65,7 +54,7 @@ html, body {
   margin-top: 70px;
   height: 200px;
   /*display: none;*/
-  /position: absolute;
+  position: absolute;
   z-index: 10;
   }
 
@@ -78,14 +67,26 @@ html, body {
   }
 
  /*SIDENAV*/
- .sidenav {
-    transform: rotate (90deg);
-    transform-origin: left top 100;
-    width:  50%;
-    height:  200px;
-    color: #fff;
-    float: right;
-    padding: 50px 100px;
+ #sidenav {
+   position: absolute;
+   right: 0;
+   top: 150px;
+   transform: rotate(90deg);
+   transform-origin: left top 200;
+   padding-bottom: 200px;
+  }
+
+  #sidenav a {
+    display: inline-block;
+    margin: 0 15px;
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    transition: color .5s ease-in-out;
+  }
+
+  #sidenav a:hover {
+    color: green;
   }
 
 
@@ -100,13 +101,13 @@ html, body {
 
   .page-banner{
     width: 100%;
-    height: 400px;
+    height: 550px;
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-		top: 45px;
+		top: 50px;
   }
 
   .page-banner:after{
@@ -117,6 +118,7 @@ html, body {
     padding-bottom: 100px;
     background-color: rgba(0,0,0, 0);
   }
+
 
   /* ABOUT PAGE */
   body.about-page {
@@ -131,6 +133,10 @@ html, body {
     background-image: url('../images/about-me.png');
   }
 
+  .about-page h1 {
+    text-align: left;
+  }
+
   .about-page main {
     float: left;
     width: 50%;
@@ -142,17 +148,214 @@ html, body {
   }
 
 
+  /* MEDIA PAGE */
+  .media-page main {
+    padding-top: 50px;
+    padding-left: 30px;
+    padding-right: 30px;
+    overflow-y: auto;
+  }
+
+  .media-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .media-card-wrapper {
+    width: 250px;
+    height: 250px;
+    position: relative;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+
+  .media-card{
+    width: 225px;
+    height: 225px;
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto 25px;
+    /*border-radius: 6px;*/
+    overflow: hidden;
+    z-index: 0;
+  }
+
+  .media-card > img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .media-list > iframe {
+    margin-bottom: 50px;
+  }
+
   /* DISCOGRAPY PAGE */
+.discography-page album{
+  display: block;
+  position: left;
+  text-align: left;
+  margin-bottom: 50px;
+}
+
+.discography-page h1{
+  padding-top: 15%;
+}
+
+.discography-page h2{
+  padding-top: 0px;
+  margin-top: 0px;
+}
+
+.discography-page > img{
+  width: 50%;
+  height: 50%;
+  padding-top: 20%;
+  padding-bottom: 10%;
+}
+
+.album-cover{
+  max-width: 300px;
+  max-height: auto;
+  width: 100%;
+  display: block;
+  padding-top: 10%;
+  /*border-radius: 8px;
+  position: right;
+  align: right;*/
+}
+
+.discography-page ul.album-details{
+  position: left;
+  z-index: 10;
+  padding: 0 50px 50px;
+  list-style: none;
+}
+
+.discography-page album-title{
+  margin: 0;
+  margin-top: 20px;
+  font-size: 36px;
+  /*font-weight: 700;*/
+}
+
+.discography-page ul.track-listings{
+  margin-top: 30px;
+  padding: 0;
+  list-style: none;
+}
+
+.discography-page ul.track-listings > li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 5px;
+  border-bottom: 1px solid #eee;
+}
+
+.discography-page span.track-number {
+  margin-right: 10px;
+}
+
+.discography-page ul-track-listings > li > .track-time {
+  text-align: right;
+}
 
 
+  /*MERCH PAGE*/
+.merch-page h1{
+    padding-top: 40px;
+    padding-bottom: 25px;
+  }
 
+.merch-page main{
+    margin-left: 300px;
+  }
 
+#myBtnContainer {
+        display: inline-block;
+  }
 
+#myBtnContainer {
+         display: table;
+         margin: 0 auto;
+  }
 
+    /*@media only screen and (max-width: 960px) {
+
+    .myBtnContainer .btn{
+          width: 100%;
+          margin: 50px;
+          text-align: center;
+        }
+    }
+
+    /* Three image containers (use 25% for four, and 50% for two, etc) */
+  .column {
+      float: left;
+      width: 25%;
+      padding: 5px;
+    }
+
+    /* Clear floats after image containers */
+  .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+  .filterDiv {
+        float: left;
+        /*background-color: #2196F3;*/
+        color: #ffffff;
+        width: 100px;
+        line-height: 100px;
+        text-align: center;
+        margin: 2px;
+        display: none; /* Hidden by default */
+    }
+
+    /* The "show" class is added to the filtered elements */
+  .show {
+        display: block;
+    }
+
+    /* Style the buttons */
+  .btn {
+      border: none;
+      outline: none;
+      padding: 15px 16px;
+      background-color: #f1f1f1;
+      cursor: pointer;
+      margin: 6px; 4px;
+    }
+
+    /* Add a light grey background on mouse-over */
+  .btn:hover {
+      background-color: #ddd;
+    }
+
+    /* Add a dark background to the active button */
+  .btn.active {
+      background-color: #666;
+      color: white;
+    }
+
+  .img {
+      margin-left: 5px;
+      margin-right: 5px;
+      /*width: 225px;
+      height: 225px;*/
+      display: inline-block;
+    }
 
   /* TOUR PAGE */
   body.tour-dates-page {
-    background-color: black;
+   background-color: black;
+   padding-bottom: 20%;
   }
 
   .tour-dates-page main {
@@ -163,17 +366,19 @@ html, body {
     overflow-y: auto;
   }
 
-.tour-dates-page h1 {
+  .tour-dates-page h1 {
     padding-bottom: 50px;
   }
+
   .tour-dates-page table {
-    color: #fff;
+    color: solid white;
   }
 
-.tour-dates-page td {
-  border-bottom: 1px solid white;
-  padding-top: 30px;
- }
+  .tour-dates-page td {
+    border-bottom: 20px;
+    color: solid white;
+    padding-top: 30px;
+  }
 
 
 

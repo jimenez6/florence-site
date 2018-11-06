@@ -1,22 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-      <title>Florence Final</title>
-      <meta charset="UTF-8">
-      <meta name="description" content="Final Project for HTML5/CSS3 Course">
-      <meta name="author" content="Milady Jimenez Lopez">
-      <link rel="stylesheet" type="text/css" href="./assets/stylesheets/styles.css"/>
-      <link href="https://fonts.googleapis.com/css?family=Architects+Daughter" rel="stylesheet">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <head>
+    <title>Florence Final</title>
+	  <meta charset="UTF-8">
+	  <meta name="description" content="Final Project for HTML5/CSS3 Course">
+	  <meta name="author" content="Milady Jimenez Lopez">
+    <link href="https://fonts.googleapis.com/css?family=Architects+Daughter" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="./assets/stylesheets/styles.css"/>
+  </head>
 
-      <style>
-       body{ font-family: 'ArchitectsDaughter', cursive; }
-       .wrapper {margin-top: 60px}
-     </style>
-
-</head>
-
-<body>
+<body class="merch-page">
   <nav class="navbar navbar-inverse navbar-fixed-top">
              <div class="container">
                <div class="navbar-header">
@@ -43,12 +37,153 @@
    </nav>
 
   <div class="page-banner banner"></div>
-      <!--<div class="image">
-         <img class="home" src="./assets/images/banner.png"/>
-      </div>-->
 
+   <nav id="sidenav">
+        <a href="https://www.youtube.com/user/florencemachine">YTB.</a>
+        <a href="https://www.facebook.com/">FB.</a>
+        <a href="https://open.spotify.com/artist/1moxjboGR7GNWYIMWsRjgG">SP.</a>
+        <a href="https://www.instagram.com/florence/?hl=en">INST.</a>
+        <a href="https://twitter.com/flo_tweet?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">TTR.</a>
+   </nav>
+
+ <div class="container-title">
+     <h1 align=center>Florence and the Machine Merchandise</h1>
+ </div>
+
+  <div id="myBtnContainer">
+    <button class="btn active" onclick="filterSelection('all')"> All Items</button>
+    <button class="btn" onclick="filterSelection('music')">Music</button>
+    <button class="btn" onclick="filterSelection('apparel')"> Apparel</button>
+    <button class="btn" onclick="filterSelection('jewelry')"> Jewelry</button>
+    <button class="btn" onclick="filterSelection('accessories')">Accessories</button>
+</div>
+
+<main>
+<div class="container">
+
+  <div class="row">
+    <div class="column">
+      <div class="filterDiv music">
+      <img src="./assets/images/merch-music1.png" style="width:175%">
+    </div>
+  </div>
+    <div class="column">
+      <div class="filterDiv music">
+        <img src="./assets/images/merch-music2.png" style="width:175%"/>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="column">
+        <div class="filterDiv apparel">
+          <img src="./assets/images/merch-apparel1.png" style="width:170%"/>
+        </div>
+    </div>
+    <div class="column">
+        <div class="filterDiv apparel">
+          <img src="./assets/images/merch-apparel2.png" style="width:212%" />
+        </div>
+    </div>
+    <div class="column">
+          <div class="filterDiv apparel">
+            <img src="./assets/images/merch-apparel3.png" style="width:170%"/>
+          </div>
+    </div>
+    </div>
+    <div class="row">
+        <div class="column">
+            <div class="filterDiv jewelry">
+              <img src="./assets/images/merch-jewelry1.png" style="width:150%"/>
+            </div>
+        </div>
+        <div class="column">
+            <div class="filterDiv jewelry">
+              <img src="./assets/images/merch-jewelry2.png" style="width:175%"/>
+            </div>
+        </div>
+        <div class="column">
+              <div class="filterDiv jewelry">
+                <img src="./assets/images/merch-jewelry3.png" style="width:200%"/>
+              </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="column">
+          <div class="filterDiv accessories">
+            <img src="./assets/images/merch-accessories1.png" style="width:175%"/>
+        </div>
+      </div>
+        <div class="column">
+          <div class="filterDiv accessories">
+            <img src="./assets/images/merch-accessories2.png" style="width:175%"/>
+          </div>
+        </div>
+        <div class="column">
+          <div class="filterDiv accessories">
+            <img src="./assets/images/merch-book.png" style="width:175%"/>
+          </div>
+        </div>
+      </div>
+  </div>
+
+
+<script>
+filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("filterDiv");
+  if (c == "all") c = "";
+  // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+// Show filtered elements
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {
+      element.className += " " + arr2[i];
+    }
+  }
+}
+
+// Hide elements that are not selected
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+// Add active class to the current control button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
+
+
+</main>
 </body>
-<link href="https://fonts.googleapis.com/css?family=Architects+Daughter" rel="stylesheet">
-<script src="./assets/javascripts/jquery-3.3.1.min.js"></script>
 
-</html>
+<link href="https://fonts.googleapis.com/css?family=Architects+Daughter" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="   crossorigin="anonymous"></script>
+<script src="./assets/javascripts/jquery-3.3.1.min.js"></script>
+<script src="./assets/javascripts/lightbox.min.js"></script>
+
+</html>-->
